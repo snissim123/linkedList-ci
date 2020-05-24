@@ -33,7 +33,7 @@ const db = firebase.database().ref();
 
 const useStyles = makeStyles((theme) => ({
   corner_box: {
-    margin: theme.spacing.unit, // You might not need this now
+    margin: theme.spacing(), // You might not need this now
     position: "fixed",
     bottom: theme.spacing(10),
     right: theme.spacing(5)
