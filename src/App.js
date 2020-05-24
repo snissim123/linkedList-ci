@@ -78,7 +78,10 @@ function App() {
 
   if (user == null) {
     return (
+      <Box>
       <Authentication state={ {user, setUser} } />
+      <Text>Linx</Text>
+      </Box>
     )}
   
   else {
