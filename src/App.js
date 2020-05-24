@@ -90,6 +90,7 @@ function App() {
       <Box textAlign="center" justifyContent="center" marginBottom="20px">
         <img src={logo} alt="Logo"/>
       </Box>
+      <Text>Linx</Text>
       <Box>
         <Box marginTop="10px">
             <Grid container justify='center' style={{paddingBottom: "10px"}}>
