@@ -13,7 +13,7 @@ import 'typeface-roboto';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 import logo from './logo.png';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, Button } from '@material-ui/core';
 import 'firebase/auth';
 import { DndProvider } from 'react-dnd'
 import Backend from 'react-dnd-html5-backend'
@@ -57,6 +57,8 @@ function App() {
 
   const [selected, setSelected] = useState({ selectedItems: []});
 
+  const [info, setInfo] = useState(null);
+
   useEffect(() => {
     //console.log("running useEffect");
     const handleData = snap => {
@@ -78,7 +80,11 @@ function App() {
 
   if (user == null) {
     return (
+      <div>
       <Authentication state={ {user, setUser} } />
+      <Button data-cy="started" onClick ={() => setInfo("Use linx to organize links for classes!")} >Info</Button>
+      <Box data-cy="showInfo">{info}</Box>
+      </div>
     )}
   
   else {
@@ -86,6 +92,8 @@ function App() {
   return ( 
     <div>
       <Authentication state={ {user, setUser} } />
+      <Button data-cy="started" onClick ={() => setInfo("Use linx to organize links for classes!")} >Info</Button>
+      <Box data-cy="showInfo">{info}</Box>
     <Box margin={15} justifyContent="center" margin="20px !important">
       <Box textAlign="center" justifyContent="center" marginBottom="20px">
         <img src={logo} alt="Logo"/>

@@ -43,6 +43,7 @@ const uiConfig = {
 
     return (
     <React.Fragment>
+      <Button data-cy="auth">linx</Button>
       { state.user ? <Welcome user={ state.user } /> : <SignIn /> }
     </React.Fragment>
   );
