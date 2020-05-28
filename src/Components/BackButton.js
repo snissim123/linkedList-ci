@@ -31,13 +31,14 @@ const BackButton = ({ state }) => {
     
   return (
     <div ref={drop}>
-      <Button
+      <Button data-testid="backButton"
         variant = "contained"
         display="inline"
         aria-label="add"
-        onClick={ () => state.setPath(getNewPath(state.path))} 
-        disabled = { atHome(state.path) } data-testid="backButton">
+        onClick={ () => state.setPath(getNewPath(state.path))}
+        disabled = { atHome(state.path) } >
         <KeyboardBackspaceIcon />
+        <span data-testid="newPath">{getNewPath(state.path)}</span>
       </Button>
     </div>)
 
